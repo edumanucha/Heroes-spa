@@ -1,6 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+
   const navigate = useNavigate();
   // hook que vamos a usar en el boton de logOut
 
@@ -13,11 +14,13 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
+      
       <Link className="navbar-brand" to="/">
         Asociaciones
       </Link>
 
       <div className="navbar-collapse">
+        
         <div className="navbar-nav">
           <NavLink
             className={({ isActive }) =>
@@ -35,6 +38,15 @@ export const Navbar = () => {
             to="/dc"
           >
             DC
+          </NavLink>
+         
+          <NavLink
+            className={({ isActive }) =>
+              `nav-item nav-link ${isActive ? "active" : ""}`
+            }
+            to="/search"
+          >
+            Search
           </NavLink>
         </div>
       </div>
